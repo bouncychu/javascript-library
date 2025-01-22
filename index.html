@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="header">
+        <h1>Welcome to the Library of Ohara!</h1>
+    </div>
+    <div class="nav">
+        <form action="javascript:void(0);" method="post">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="pages">Number of Pages:</label>
+            <input type="number" id="pages" name="pages">
+            <label for="read">Read?</label>
+            <input type="checkbox" id="read" name="read">
+            <button>Add book</button>
+        </form>
+    </div>
+    <div id="container" class="card-container">
+        <div class="book-card">
+            <h4>Book Title</h4>
+            <p>Book paragraph</p>
+            <p>54 pages</p>
+            <button>read</button>
+        </div>
+        <div class="book-card">
+            <h4>Book Title</h4>
+            <p>Book paragraph</p>
+            <p>54 pages</p>
+            <button>read</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
     
 </body>
 </html>

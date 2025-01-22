@@ -1,1 +1,42 @@
-/* this is where your css goes
+/* this is where your css goes */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > div {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+}
+
+.header {
+    align-self: center;
+    min-height: 20vh;
+    justify-self: center;
+    display: grid;
+}
+
+.header h1 {
+    justify-self: center;
+    align-self: center;
+}
+
+.nav {
+    align-self: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 10px;
+    gap: 5px;
+}
+
+.bookcard {
+    border-style: solid;
+    border-color: red;
+    padding-left: 5px;
+}
