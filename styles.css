@@ -40,3 +40,8 @@ body > div {
     border-color: red;
     padding-left: 5px;
 }
+
+.book-card ul {
+    list-style-type: none;
+    padding: 0;
+}
