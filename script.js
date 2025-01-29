@@ -26,10 +26,10 @@ function addBookToLibrary() {
   book[1] = bookTitle;
   book[2] = pageNumber;
   if (readToggle === true) {
-    book[3] = "Read";  
+    book[3] = "read";  
   }
   else {
-    book[3] = "Not Read";
+    book[3] = "unread";
   }
 
   // Create new instance of Book object and push the object into myLibrary Array
@@ -48,7 +48,7 @@ function updateLibrary (element, index) {
   let bookAuthor = document.createElement("li");
   let bookPages = document.createElement("li");
   let bookRead = document.createElement("li");
-  container.appendChild(content);
+  container.prepend(content);
 
   //assign book data in library array to text content
   bookTitle.textContent = myLibrary[index].title;
@@ -58,6 +58,7 @@ function updateLibrary (element, index) {
   list.appendChild(bookAuthor);
   bookPages.innerText = myLibrary[index].page;
   list.appendChild(bookPages);
+  
 
   //implementation of read checkbox button
   let readCheckBox = document.createElement("input");
