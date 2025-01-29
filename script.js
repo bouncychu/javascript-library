@@ -56,19 +56,31 @@ function updateLibrary (element, index) {
   content.appendChild(list);
   bookAuthor.innerText = myLibrary[index].author;
   list.appendChild(bookAuthor);
-  bookPages.innerText = myLibrary[index].page;
+  bookPages.innerText = myLibrary[index].page + " pages";
   list.appendChild(bookPages);
   
+  let readListItem = document.createElement("div");
+  readListItem.style.display = 'flex';
+  readListItem.style.gap = "5px";
+  readListItem.style.justifyContent = 'flex-start';
+  list.appendChild(readListItem);
 
   //implementation of read checkbox button
+  let readCheckBoxLabel = document.createElement("label");
   let readCheckBox = document.createElement("input");
+  readCheckBox.className = "checkbox";
+  readCheckBox.id = myLibrary[index].title;
+  readCheckBoxLabel.htmlFor = myLibrary[index].title;
   readCheckBox.setAttribute("type", "checkbox");
+  
+  readCheckBoxLabel.className = "switch";
   if (myLibrary[index].read == "read") {readCheckBox.checked =  true;}
   else {readCheckBox.checked = false;}
-  list.appendChild(readCheckBox);
+  readListItem.appendChild(readCheckBox);
+  readListItem.appendChild(readCheckBoxLabel);
   bookRead.innerText = myLibrary[index].read;
-  list.appendChild(bookRead);
-  readCheckBox.addEventListener("click", function(){
+  readListItem.appendChild(bookRead);
+  readCheckBoxLabel.addEventListener("click", function(){
     myLibrary[index].toggleRead();
     bookRead.innerText = myLibrary[index].read;
   });

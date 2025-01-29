@@ -12,6 +12,11 @@ body {
 
 }
 
+h3 {
+    letter-spacing: 2.5px;
+    text-shadow: 2px 2px #EE6C4D;
+}
+
 
 .header {
     align-self: center;
@@ -22,6 +27,7 @@ body {
     color: #E0FBFC;
     text-shadow: 3px 3px #3D5A80;
     width: 100%;
+    filter: drop-shadow(0px 5px 4px #3D5A80);
 }
 
 .header h1 {
@@ -46,6 +52,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 5px 4px #3D5A80);
 }
 
 .nav input {
@@ -74,6 +81,7 @@ body {
     border-left: none;
     border-radius: 25px;
     border-width: 3px;
+    filter: drop-shadow(0px 5px 4px #3D5A80);
 }
 
 .book-card {
@@ -86,9 +94,12 @@ body {
     background-color: #3D5A80;
     padding-left: 5px;
     display: grid;
-    grid-template-rows: 100px, 150px, 150px;
+    grid-template-rows: 1fr, 1fr, 1fr;
     text-wrap: wrap;
     padding: 20px;
+    filter: drop-shadow(0px 5px 4px #3D5A80); 
+    align-items: end;
+    gap: 20px;
 }
 
 .deletebutton {
@@ -159,6 +170,7 @@ body {
   }
 
   .checkbox:checked + .switch::after {
+    content: '';
     left : 20px; 
   }
   .checkbox:checked + .switch {
@@ -175,4 +187,13 @@ body {
     gap: 25px;
     justify-content: space-evenly;
     flex-wrap: wrap;
+ }
+
+ button:hover {
+    background-color: #EE6C4D;
+    color:#E0FBFC;
+    text-shadow:#3D5A80;
+    border-color:#3D5A80;
+    border-width: 2px;
+    border-style: solid;
  }
