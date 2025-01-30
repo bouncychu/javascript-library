@@ -226,9 +226,19 @@ h3 {
         display: grid;
         grid-template-rows: auto auto auto auto;
         justify-items: start;
+        padding:20px;
     }
     .nav form div {
         display: grid;
-        grid-template-columns: 100px 1fr;
+        grid-template-rows: 1fr 1fr;
     }
+
+    .nav input {
+        max-width: 150px;
+    }
+
+    #author-word {
+        max-width: 20px;
+    }
+
   }
