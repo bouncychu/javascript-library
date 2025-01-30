@@ -225,6 +225,10 @@ h3 {
     .nav form {
         display: grid;
         grid-template-rows: auto auto auto auto;
-        justify-items: center;
+        justify-items: start;
+    }
+    .nav form div {
+        display: grid;
+        grid-template-columns: 100px 1fr;
     }
   }
