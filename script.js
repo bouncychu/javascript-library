@@ -48,6 +48,7 @@ function updateLibrary (element, index) {
   let bookAuthor = document.createElement("li");
   let bookPages = document.createElement("li");
   let bookRead = document.createElement("li");
+
   container.prepend(content);
 
   //assign book data in library array to text content
@@ -69,20 +70,28 @@ function updateLibrary (element, index) {
   let readCheckBoxLabel = document.createElement("label");
   let readCheckBox = document.createElement("input");
   readCheckBox.className = "checkbox";
-  readCheckBox.id = myLibrary[index].title;
-  readCheckBoxLabel.htmlFor = myLibrary[index].title;
+  readCheckBox.id = myLibrary[index].title + index + index;
+  readCheckBoxLabel.htmlFor = myLibrary[index].title + index + index;
   readCheckBox.setAttribute("type", "checkbox");
   
   readCheckBoxLabel.className = "switch";
-  if (myLibrary[index].read == "read") {readCheckBox.checked =  true;}
-  else {readCheckBox.checked = false;}
+
+  if (myLibrary[index].read == "read") {
+    readCheckBox.checked =  true;
+  } else {
+    readCheckBox.checked = false;
+  }
   readListItem.appendChild(readCheckBox);
   readListItem.appendChild(readCheckBoxLabel);
   bookRead.innerText = myLibrary[index].read;
+  if (bookRead.innerText == "read") {bookRead.style.color = "#EE6C4D"}
+  else {bookRead.style.color = "#E0FBFC"};
   readListItem.appendChild(bookRead);
   readCheckBoxLabel.addEventListener("click", function(){
     myLibrary[index].toggleRead();
     bookRead.innerText = myLibrary[index].read;
+    if (bookRead.innerText == "read") {bookRead.style.color = "#EE6C4D"}
+    else {bookRead.style.color = "#E0FBFC"};
   });
 
   //add delete button
