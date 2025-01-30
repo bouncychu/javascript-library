@@ -39,6 +39,7 @@ function addBookToLibrary() {
 }
 
 function updateLibrary (element, index) {
+
   //identify and define nodes to add HTML containers
   let container = document.querySelector("#container");
   let content = document.createElement("div");
@@ -48,7 +49,6 @@ function updateLibrary (element, index) {
   let bookAuthor = document.createElement("li");
   let bookPages = document.createElement("li");
   let bookRead = document.createElement("li");
-
   container.prepend(content);
 
   //assign book data in library array to text content
@@ -139,6 +139,13 @@ addBook.addEventListener('click', function () {
 function clearContainer() { 
   while(container.firstChild)
     container.removeChild(container.firstChild);
+
+  //If container empty add message
+  if (myLibrary.length === 0) {
+    console.log("libary is empty");
+    container.style.color = "#3D5A80";
+    container.textContent = "Library empty, please add a book.";
+  };
 } 
 
 // Add prototype function to book to toggle "read" status
